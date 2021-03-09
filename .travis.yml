@@ -19,10 +19,11 @@ before_script:
 - createdb payg_service_test -O payg -T template0
 
 script:
-- tox
-deploy:
-- provider: script
-  script: python -m unittest test
-  on:
-    branch: master
-    python: 3.6
+- python -m unittest test
+
+# deploy:
+# - provider: script
+#   script: python -m unittest test
+#   on:
+#     branch: master
+#     python: 3.6
