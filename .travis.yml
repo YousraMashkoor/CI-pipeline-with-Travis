@@ -19,7 +19,7 @@ before_script:
 - createdb payg_service_test -O payg -T template0
 
 script:
-- python -m unittest test
+- python -m unittest tests/test.py
 
 # deploy:
 # - provider: script
