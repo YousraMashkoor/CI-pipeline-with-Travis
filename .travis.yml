@@ -1,0 +1,28 @@
+sudo: yes
+dist: bionic
+language: python
+
+python:
+- '3.6'
+
+branches:
+  only:
+  - master
+
+services:
+  - postgresql
+
+install:
+- pip install tox-travis
+before_script:
+- psql -c "CREATE USER payg WITH PASSWORD 'payg_service';"
+- createdb payg_service_test -O payg -T template0
+
+script:
+- tox
+deploy:
+- provider: script
+  script: python -m unittest test
+  on:
+    branch: master
+    python: 3.6
