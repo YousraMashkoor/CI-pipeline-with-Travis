@@ -20,6 +20,7 @@ before_script:
 
 script:
 - python -m unittest tests/test_class.py
+- tox
 
 # deploy:
 # - provider: script
