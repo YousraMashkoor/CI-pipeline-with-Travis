@@ -1,8 +1,10 @@
 import sys, os
-sys.path.append(os.path.abspath('../app'))
+sys.path.append(os.path.abspath('..'))
 
-from app import Person
-from app import Student
+from app.person import Person
+from app.student import Student
+
+
 
 import unittest
 
@@ -27,5 +29,5 @@ class TestStudent(unittest.TestCase):
         self.assertEqual(str(s1), 'First Name: Yousra\nLast Name: Mashkoor\nAddress: Karachi street 123\nStudent Level: 30\nGPA: 3.7')
     
 
-# if __name__=='__main__':
-#     unittest.main()
+if __name__=='__main__':
+    unittest.main()
